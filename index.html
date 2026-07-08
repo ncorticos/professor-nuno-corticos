@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuno Dinis Cortiços — Professor @ FA.ULisboa · Researcher @ CIAUD</title>
+<meta name="description" content="Nuno Dinis Cortiços — Professor at the Lisbon School of Architecture, Universidade de Lisboa (FA.ULisboa), and Researcher at CIAUD. Building science, energy efficiency, AI in building performance, conservation and rehabilitation.">
+<link rel="icon" type="image/jpeg" href="images/portrait.jpg">
+<link rel="apple-touch-icon" href="images/portrait.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#14bdee;
+  --accent-dark:#0fa8d6;
+  --dark:#384158;
+  --darker:#2b3247;
+  --body:#76777a;
+  --light:#f7f9fc;
+  --white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Roboto',sans-serif;color:var(--body);font-size:15px;line-height:1.9;background:var(--white)}
+h1,h2,h3,h4,h5{font-family:'Poppins',sans-serif;color:var(--dark);font-weight:600}
+a{text-decoration:none;color:inherit;transition:all .25s ease}
+img{max-width:100%}
+.container{max-width:1170px;margin:0 auto;padding:0 20px}
+.section{padding:90px 0}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title h2{font-size:30px;position:relative;display:inline-block;padding-bottom:16px}
+.section-title h2::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:70px;height:3px;background:var(--accent)}
+.section-title p{max-width:640px;margin:14px auto 0;font-weight:300}
+
+/* Top bar */
+.topbar{background:var(--darker);color:#b5bac9;font-size:12.5px;padding:9px 0}
+.topbar .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.topbar span{margin-right:22px}
+.topbar a:hover{color:var(--accent)}
+.topbar .ids a{margin-left:18px;letter-spacing:.4px;text-transform:uppercase;font-size:11px}
+
+/* Header */
+header{background:var(--white);position:sticky;top:0;z-index:100;box-shadow:0 2px 14px rgba(56,65,88,.09)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:var(--dark);letter-spacing:.5px}
+.logo span{color:var(--accent)}
+.logo small{display:block;font-size:10.5px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--body);margin-top:-4px}
+nav ul{display:flex;list-style:none;gap:30px}
+nav a{font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.6px;color:var(--dark)}
+nav a:hover{color:var(--accent)}
+.burger{display:none;font-size:24px;color:var(--dark);background:none;border:none;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;min-height:620px;display:flex;align-items:center;color:#fff;overflow:hidden;
+  background:linear-gradient(115deg,rgba(43,50,71,.94) 0%,rgba(56,65,88,.82) 55%,rgba(20,189,238,.45) 100%),
+  repeating-linear-gradient(45deg,#2b3247 0 12px,#313a52 12px 24px)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 85% 15%,rgba(20,189,238,.28),transparent 55%)}
+.hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.5fr 1fr;gap:50px;align-items:center;padding-top:70px;padding-bottom:70px}
+.hero-tag{font-family:'Poppins',sans-serif;font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--accent);margin-bottom:18px;font-weight:500}
+.hero h1{color:#fff;font-size:52px;line-height:1.15;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{margin:24px 0 34px;max-width:560px;font-weight:300;font-size:16.5px;color:#dfe4ee}
+.btn{display:inline-block;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:15px 36px;border-radius:3px;background:var(--accent);color:#fff}
+.btn:hover{background:var(--accent-dark)}
+.btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.55);margin-left:14px}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(6px);border-radius:6px;padding:34px;text-align:center}
+.portrait{width:170px;height:170px;border-radius:50%;margin:0 auto 20px;border:4px solid var(--accent);overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent),var(--dark));font-family:'Poppins',sans-serif;font-size:52px;font-weight:700;color:#fff}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.hero-card h3{color:#fff;font-size:20px}
+.hero-card .role{color:var(--accent);font-size:13px;text-transform:uppercase;letter-spacing:2px;margin:6px 0 14px;font-family:'Poppins',sans-serif}
+.hero-card p{font-size:13.5px;color:#c9cfdd;line-height:1.7}
+
+/* Feature strip */
+.features{margin-top:-58px;position:relative;z-index:5}
+.features .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-radius:6px;overflow:hidden;box-shadow:0 15px 40px rgba(56,65,88,.18)}
+.feature{background:var(--dark);color:#cdd3e0;padding:38px 34px;border-right:1px solid rgba(255,255,255,.08)}
+.feature:last-child{border-right:none}
+.feature.accent{background:var(--accent);color:#eafaff}
+.feature h4{color:#fff;font-size:17px;margin-bottom:10px;display:flex;align-items:center;gap:12px}
+.feature .ico{font-size:26px}
+.feature p{font-size:13.5px;line-height:1.75}
+
+/* About */
+.about .container{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
+.about h2{font-size:30px;margin-bottom:8px;position:relative;padding-bottom:16px}
+.about h2::after{content:"";position:absolute;left:0;bottom:0;width:70px;height:3px;background:var(--accent)}
+.about p{margin:18px 0}
+.about .highlight{color:var(--dark);font-weight:500}
+.expertise{background:var(--light);border-radius:6px;padding:36px}
+.expertise h3{font-size:19px;margin-bottom:20px}
+.tags{display:flex;flex-wrap:wrap;gap:9px}
+.tag{background:#fff;border:1px solid #e3e8f0;color:var(--dark);font-size:12.5px;font-family:'Poppins',sans-serif;padding:7px 14px;border-radius:30px}
+.tag:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Counters */
+.counters{background:linear-gradient(rgba(43,50,71,.93),rgba(43,50,71,.93)),repeating-linear-gradient(-45deg,#313a52 0 14px,#2b3247 14px 28px);color:#fff;padding:70px 0}
+.counters .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:30px;text-align:center}
+.counter h3{color:var(--accent);font-size:40px;font-weight:700}
+.counter p{font-size:12px;text-transform:uppercase;letter-spacing:1.6px;color:#c3c9d8;font-family:'Poppins',sans-serif;margin-top:4px}
+.counter .src{display:block;font-size:10px;text-transform:none;letter-spacing:.4px;color:#7d8499;margin-top:5px;font-family:'Roboto',sans-serif;font-weight:300}
+a.src:hover{color:var(--accent)}
+
+/* Cards (recent activities) */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.card{background:#fff;border:1px solid #eceff5;border-radius:6px;overflow:hidden;box-shadow:0 6px 18px rgba(56,65,88,.06);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(56,65,88,.14)}
+.card-top{height:8px;background:var(--accent)}
+.card-top.navy{background:var(--dark)}
+.card-body{padding:28px;flex:1;display:flex;flex-direction:column}
+.card .meta{font-size:11.5px;text-transform:uppercase;letter-spacing:1.4px;color:var(--accent);font-family:'Poppins',sans-serif;font-weight:600;margin-bottom:10px}
+.card h3{font-size:17px;line-height:1.5;margin-bottom:12px}
+.card p{font-size:13.5px;line-height:1.75;flex:1}
+.card .foot{margin-top:16px;font-size:12.5px;color:var(--dark);font-family:'Poppins',sans-serif;font-weight:500}
+.card .foot a{color:var(--accent)}
+.card .foot.muted,.event .link.muted,.partner .link.muted{color:#a3a9b8;font-weight:400;font-style:italic}
+
+/* Publications */
+.pubs{background:var(--light)}
+.pub-list{max-width:900px;margin:0 auto}
+.pub{background:#fff;border:1px solid #e9edf4;border-radius:6px;padding:24px 28px;margin-bottom:16px;display:grid;grid-template-columns:96px 1fr;gap:24px;align-items:start;transition:box-shadow .25s ease}
+.pub:hover{box-shadow:0 10px 26px rgba(56,65,88,.1)}
+.pub .date{font-family:'Poppins',sans-serif;font-weight:600;color:var(--dark);font-size:14px;text-align:center;background:var(--light);border-radius:6px;padding:12px 6px;line-height:1.3}
+.pub .date span{display:block;color:var(--accent);font-size:20px}
+.pub h3{font-size:16px;line-height:1.5}
+.pub h3 a:hover{color:var(--accent)}
+.pub .venue{font-size:13px;margin-top:6px}
+.pub .venue b{color:var(--dark);font-weight:500}
+.pub .badges{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+.badge{font-size:11px;font-family:'Poppins',sans-serif;letter-spacing:.6px;text-transform:uppercase;background:#eaf8fd;color:var(--accent-dark);padding:3px 10px;border-radius:20px;border:1px solid #cdeefb}
+.badge.gray{background:#f1f3f8;color:var(--dark);border-color:#e0e5ef}
+.badge.cite{background:var(--dark);color:#fff;border-color:var(--dark)}
+.center-btn{text-align:center;margin-top:40px}
+.center-btn .btn.line{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.center-btn .btn.line:hover{background:var(--accent);color:#fff}
+
+/* Events timeline */
+.events .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+.event{border:1px solid #eceff5;border-radius:6px;padding:30px;display:flex;gap:24px;background:#fff;box-shadow:0 6px 18px rgba(56,65,88,.05)}
+.event .cal{min-width:78px;height:84px;background:var(--dark);border-radius:6px;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Poppins',sans-serif}
+.event .cal b{font-size:24px;color:var(--accent)}
+.event .cal span{font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.event h3{font-size:16.5px;line-height:1.5}
+.event p{font-size:13.5px;margin-top:8px}
+.event .loc{font-size:12px;color:var(--accent-dark);font-family:'Poppins',sans-serif;text-transform:uppercase;letter-spacing:1px;margin-top:10px;font-weight:600}
+.event .link{margin-top:8px;font-size:12.5px;font-family:'Poppins',sans-serif;font-weight:500}
+.event .link a{color:var(--accent)}
+
+/* Partners */
+.partners{background:var(--light)}
+.partners .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.partner{background:#fff;border:1px solid #e9edf4;border-radius:6px;padding:28px 24px;text-align:center;transition:transform .25s ease}
+.partner .link{margin-top:10px;font-size:12px;font-family:'Poppins',sans-serif;font-weight:600}
+.partner .link a{color:var(--accent)}
+.partner:hover{transform:translateY(-4px);border-color:var(--accent)}
+.partner .ico{font-size:30px;margin-bottom:12px}
+.partner h4{font-size:14.5px;line-height:1.5}
+.partner p{font-size:12.5px;margin-top:6px;line-height:1.6}
+
+/* Teaching */
+.teaching .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.level{background:var(--dark);border-radius:6px;padding:34px;color:#ccd2e0}
+.level.accent{background:var(--accent);color:#eafaff}
+.level h3{color:#fff;font-size:18px;margin-bottom:6px}
+.level .sub{font-size:11.5px;text-transform:uppercase;letter-spacing:1.6px;font-family:'Poppins',sans-serif;margin-bottom:18px;opacity:.8}
+.level ul{list-style:none}
+.level li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13.5px}
+.level li:last-child{border-bottom:none}
+
+/* Footer */
+footer{background:var(--darker);color:#aab1c3;padding:70px 0 0}
+footer .grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:50px;padding-bottom:50px}
+footer h4{color:#fff;font-size:16px;margin-bottom:20px}
+footer p,footer li{font-size:13.5px;line-height:1.9}
+footer ul{list-style:none}
+footer a:hover{color:var(--accent)}
+footer .logo{color:#fff;margin-bottom:14px}
+.wa-line{position:relative;display:inline-block;cursor:pointer}
+.wa-line:hover{color:#fff}
+.qr-card{position:absolute;top:100%;left:0;margin-top:12px;z-index:30;display:flex;flex-direction:column;align-items:center;gap:12px;background:linear-gradient(160deg,#4ade80,#25D366 60%,#1fb959);padding:16px;border-radius:18px;box-shadow:0 12px 28px rgba(37,211,102,.35);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .22s ease,transform .22s ease,visibility .22s}
+.wa-line:hover .qr-card{opacity:1;visibility:visible;transform:translateY(0)}
+.qr-card .inner{background:#fff;border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.qr-card img{width:100px;height:100px;border-radius:8px;display:block}
+.qr-card span{font-size:10.5px;color:var(--darker);font-family:'Poppins',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.6px;text-align:center;white-space:nowrap}
+.footbar{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;font-size:12.5px;text-align:center;color:#7d8499}
+.footbar a{color:var(--accent)}
+
+@media(max-width:960px){
+  .hero .container,.about .container{grid-template-columns:1fr}
+  .hero h1{font-size:38px}
+  .features .grid,.cards,.teaching .grid,.events .grid{grid-template-columns:1fr}
+  .counters .grid{grid-template-columns:repeat(3,1fr);gap:36px}
+  .partners .grid{grid-template-columns:repeat(2,1fr)}
+  footer .grid{grid-template-columns:1fr}
+  nav ul{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:10px 20px 20px;box-shadow:0 14px 24px rgba(56,65,88,.15)}
+  nav ul.open{display:flex}
+  nav li{padding:10px 0;border-bottom:1px solid #eef1f6}
+  .burger{display:block}
+}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="container">
+    <div>
+      <span>✉ <a href="mailto:ncorticos@edu.ulisboa.pt">ncorticos@edu.ulisboa.pt</a></span>
+      <span>📍 Faculdade de Arquitetura, Universidade de Lisboa</span>
+    </div>
+    <div class="ids">
+      <a href="https://orcid.org/0000-0002-9446-6199" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://www.scopus.com/authid/detail.uri?authorId=57190673653" target="_blank" rel="noopener">Scopus</a>
+      <a href="https://scholar.google.pt/citations?user=j6Hc6mIAAAAJ&hl=pt-PT" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://www.researchgate.net/profile/Nuno-Corticos" target="_blank" rel="noopener">ResearchGate</a>
+      <a href="https://www.cienciavitae.pt" target="_blank" rel="noopener">Ciência Vitae</a>
+      <a href="https://www.linkedin.com/in/nuno-dinis-corti%C3%A7os-0972b820/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="container nav">
+    <a class="logo" href="#top">Nuno Dinis <span>Cortiços</span><small>Building Science · AI · Sustainability</small></a>
+    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#recent">Recent Work</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#partners">Partnerships</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="container">
+    <div>
+      <div class="hero-tag">Architect · Professor · Researcher</div>
+      <h1>Building Science for a <em>Carbon-Neutral</em> Future</h1>
+      <p class="lead">Advancing energy efficiency, AI-driven building performance, and the conservation, restoration and rehabilitation of the built environment — from Lisbon to the world.</p>
+      <a class="btn" href="#recent">Recent Activities</a>
+      <a class="btn ghost" href="#publications">Publications</a>
+    </div>
+    <div class="hero-card">
+      <div class="portrait">
+        <img src="images/portrait.jpg" alt="Nuno Dinis Cortiços" onerror="this.remove();this.parentElement.textContent='NC'">
+      </div>
+      <h3>Nuno Dinis Cortiços</h3>
+      <div class="role">Professor @ FA.ULisboa · Researcher @ CIAUD</div>
+      <p>Co-founder of the Building Science, Technology and Sustainability Laboratory (BSTS Lab). Researcher at CIAUD. Conference Chair, ICBSTS &amp; ICAMC series.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Feature strip -->
+<div class="features">
+  <div class="container">
+    <div class="grid">
+      <div class="feature accent">
+        <h4><span class="ico">🔬</span>Research</h4>
+        <p>nZEB &amp; Positive Energy Buildings, BIST/BIPV integration, multizone dynamic simulation, digital twins, and AI-based predictive maintenance for existing building stock.</p>
+      </div>
+      <div class="feature">
+        <h4><span class="ico">🎓</span>Teaching</h4>
+        <p>Bachelor's to Doctoral levels at FA-ULisboa and SGGW Warsaw — Environmental Comfort, Energy Efficiency, and Artificial Intelligence applied to cities, buildings and research.</p>
+      </div>
+      <div class="feature">
+        <h4><span class="ico">🌍</span>Leadership</h4>
+        <p>Program chair of the international BSTS conference series (Lisbon · Singapore · Nagoya), lead guest editor, and partner in European-funded projects such as Horizon 2020 SHARP and Erasmus+ CLASS.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+<section class="section about" id="about">
+  <div class="container">
+    <div>
+      <h2>About</h2>
+      <p><span class="highlight">Nuno Dinis Cortiços</span> graduated as an architect in 1999, his final project distinguished by the Portuguese Architects Association as <span class="highlight">"Best Student Work of the Year."</span> After practicing at renowned firms — notably Aires Mateus Associates — he founded his own office, leading architectural design services on projects up to 75,000 m².</p>
+      <p>Joining academia in 2007, he completed a Ph.D. in Construction Technologies (2014) on building performance assessment and defect analysis. His research evolved toward <span class="highlight">bioclimatic analysis, environmental performance and sustainability</span>, with deep specialization in conservation, restoration and rehabilitation of existing buildings.</p>
+      <p>In 2020 he co-founded the <span class="highlight">Building Science, Technology and Sustainability Laboratory (BSTS Lab)</span>, consolidating interdisciplinary research in bioclimatic architecture, energy retrofitting and AI applications in building performance, and coordinating annual international conferences. Today his work focuses on transforming existing buildings into <span class="highlight">Nearly Zero Energy (nZEB) and Positive Energy Buildings (PEB)</span>, leveraging modular construction, integrated photovoltaics and dynamic simulation.</p>
+    </div>
+    <div class="expertise">
+      <h3>Areas of Expertise</h3>
+      <div class="tags">
+        <span class="tag">Conservation &amp; Rehabilitation</span>
+        <span class="tag">AI in Building Performance</span>
+        <span class="tag">nZEB &amp; PEB</span>
+        <span class="tag">BIST / BIPV Systems</span>
+        <span class="tag">Bioclimatic Architecture</span>
+        <span class="tag">Energy Retrofit</span>
+        <span class="tag">Building Energy Simulation</span>
+        <span class="tag">Multizone Dynamic Simulation</span>
+        <span class="tag">Digital Twins</span>
+        <span class="tag">Life Cycle Assessment</span>
+        <span class="tag">Thermal Comfort</span>
+        <span class="tag">Construction Systems</span>
+        <span class="tag">Building Materials</span>
+        <span class="tag">Energy Certification (SCE)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Counters -->
+<section class="counters">
+  <div class="container">
+    <div class="grid">
+      <div class="counter"><h3 data-count="43">0</h3><p>Publications</p></div>
+      <div class="counter"><h3 data-count="281">0</h3><p>Citations<a class="src" href="https://scholar.google.pt/citations?user=j6Hc6mIAAAAJ&amp;hl=pt-PT" target="_blank" rel="noopener">Google Scholar total →</a></p></div>
+      <div class="counter"><h3 data-count="10">0</h3><p>H-Index<a class="src" href="https://www.researchgate.net/profile/Nuno-Corticos" target="_blank" rel="noopener">ResearchGate profile →</a></p></div>
+      <div class="counter"><h3 data-count="44">0</h3><p>Events Organized</p></div>
+      <div class="counter"><h3 data-count="27">0</h3><p>Communications</p></div>
+      <div class="counter"><h3 data-count="3">0</h3><p>Funded Projects</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent activities -->
+<section class="section" id="recent">
+  <div class="container">
+    <div class="section-title">
+      <h2>Recent Activities</h2>
+      <p>Highlights from 2024–2026: conference leadership, funded research, heritage advocacy and invited talks across Portugal, Europe and Asia.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-top navy"></div>
+        <div class="card-body">
+          <div class="meta">2026 · Invited Speaker</div>
+          <h3>Jornadas do Património — Câmara Municipal de Palmela</h3>
+          <p>Invited speaker at the Heritage Days (Jornadas do Património) organized by the Câmara Municipal de Palmela, Portugal, addressing conservation, restoration and rehabilitation strategies for the municipality's built heritage.</p>
+          <div class="foot"><a href="https://www.cm-palmela.pt/viver/cultura/agenda-de-eventos/evento/jornadas-da-reabilitacao-urbana-inscricoes-a-decorrer-98" target="_blank" rel="noopener">cm-palmela.pt →</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"></div>
+        <div class="card-body">
+          <div class="meta">2026 · CIAUD Embryo Project · Approved</div>
+          <h3>MatrixB — Liquid Thermal Insulation Coating (LTIC)</h3>
+          <p>Validating advanced micro-sphere, high-reflectivity coating systems for the passive energy retrofit of Portugal's pre-1990 housing stock and historic buildings, where conventional insulation thickness must be minimized. Gap analysis, emissivity and solar-reflectivity measurement, hygrothermal simulation and climate-aging mock-up validation — with Carlos C. Duarte (PI) and the Technological Center for Ceramics and Glass (CTCV). Approved March 2026.</p>
+          <div class="foot muted">Internal CIAUD embryo project · no public listing yet</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top navy"></div>
+        <div class="card-body">
+          <div class="meta">2025–2028 · Erasmus+ KA220-HED · Ongoing</div>
+          <h3>CLASS — Collective Learning Around Sustainable Spaces</h3>
+          <p>Leading the FA.ULisboa team as Principal Researcher in this 36-month Erasmus+ cooperation project (€250,000), coordinated by Yes We Camp (France), in partnership with Tübingen University (Germany), Ancoats (France) and Coop'Eskemm (France) — collective learning around sustainable spaces across Europe.</p>
+          <div class="foot"><a href="https://yeswecamp.org/en/" target="_blank" rel="noopener">yeswecamp.org →</a> <span class="muted">(coordinator · project ref. 2025-1-FR01-KA220-HED-000358033)</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"></div>
+        <div class="card-body">
+          <div class="meta">2026 · Conference Chair</div>
+          <h3>7th ICBSTS &amp; 12th ICAMC — Lisbon 2026</h3>
+          <p>Chairing the 7th International Conference on Building Science, Technology and Sustainability and the 12th International Conference on Architecture, Materials and Construction, hosted at Faculdade de Arquitetura, Universidade de Lisboa, September 2–4, 2026.</p>
+          <div class="foot"><a href="https://www.icbsts.org" target="_blank" rel="noopener">icbsts.org →</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top navy"></div>
+        <div class="card-body">
+          <div class="meta">2025 · Research Project (FCT PEX)</div>
+          <h3>X-TEND — Residential Extension Prototype</h3>
+          <p>Leading BSTS Lab research on X-TEND, a light, modular, prefabricated prototype that extends living space on existing residential façades — combining generative structural optimization, bioclimatic design and green building strategies for post-pandemic urban living.</p>
+          <div class="foot muted">FCT proposal ref. 2024.16494.PEX · not publicly listed</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"></div>
+        <div class="card-body">
+          <div class="meta">2025 · Book</div>
+          <h3>Environmental Comfort and Energy Efficiency</h3>
+          <p>Compendium for Architectural Practice (with Carlos C. Duarte, MDPI) — bioclimatic design, passive and active systems, renewable integration and adaptive comfort strategies, bridging theory with climate-responsive practice.</p>
+          <div class="foot"><a href="https://doi.org/10.20944/preprints202505.0621.v1" target="_blank" rel="noopener">doi:10.20944 →</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top navy"></div>
+        <div class="card-body">
+          <div class="meta">2025 · Keynote &amp; Conference Circuit</div>
+          <h3>ICBSTS 2025 &amp; ICAMC 2025 — Meijo University, Nagoya</h3>
+          <p>Conference Chairman, keynote speaker and program chair of the 6th ICBSTS and 11th ICAMC at Meijo University, Nagoya, Japan (September 3–5, 2025), presenting "AI tools on architectural design and rehabilitation" — after NTU Singapore (2023). Also presented at CIRMARE 2025, Porto, in November.</p>
+          <div class="foot"><a href="https://www.icbsts.org" target="_blank" rel="noopener">icbsts.org →</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top"></div>
+        <div class="card-body">
+          <div class="meta">2024–2025 · AI Research Line</div>
+          <h3>Artificial Intelligence in Architecture</h3>
+          <p>Comprehensive analysis of AI software tools and their global adoption (Springer LNCE, 2025), AI impact on buildings' energy efficiency (IEEE ICCSM, Paris), and doctoral teaching on AI applied to cities, buildings and scientific research.</p>
+          <div class="foot"><a href="https://doi.org/10.1007/978-981-96-7687-3_15" target="_blank" rel="noopener">doi:10.1007 →</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top navy"></div>
+        <div class="card-body">
+          <div class="meta">2024 · Invited Talks</div>
+          <h3>University of Nottingham &amp; Saraiva + Associados</h3>
+          <p>Invited to the University of Nottingham's Department of Engineering to present research on AI integration in building design for energy-efficient conservation, and engaged with the Saraiva + Associados Academy bridging architectural innovation and digital technologies.</p>
+          <div class="foot"><a href="https://www.saraivaeassociados.com/pt-pt/academy/" target="_blank" rel="noopener">S+Academy →</a> <span class="muted">(Nottingham talk — no public listing)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Publications -->
+<section class="section pubs" id="publications">
+  <div class="container">
+    <div class="section-title">
+      <h2>Selected Publications</h2>
+      <p>43 publications in high-impact journals — Elsevier, Springer Nature, MDPI, IEEE — with 255+ citations, h-index 10. Ordered by citation impact.</p>
+    </div>
+    <div class="pub-list">
+      <div class="pub">
+        <div class="date"><span>2021</span>Jun</div>
+        <div>
+          <h3><a href="https://doi.org/10.1016/j.enbuild.2021.111180" target="_blank" rel="noopener">COVID-19: The Impact in US High-Rise Office Buildings Energy Efficiency</a></h3>
+          <div class="venue"><b>Energy and Buildings, Elsevier</b> · IF 5.9 · with C. C. Duarte</div>
+          <div class="badges"><span class="badge cite">33 citations</span><span class="badge">Scopus</span><span class="badge gray">Article</span></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="date"><span>2022</span>Apr</div>
+        <div>
+          <h3><a href="https://doi.org/10.1016/j.esd.2022.04.006" target="_blank" rel="noopener">Energy Efficiency in Large Office Buildings post-COVID-19 in Europe's Top Five Economies</a></h3>
+          <div class="venue"><b>Energy for Sustainable Development, Elsevier</b> · IF 5.2 · with C. C. Duarte</div>
+          <div class="badges"><span class="badge cite">22 citations</span><span class="badge">Scopus</span><span class="badge gray">Article</span></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="date"><span>2023</span>Jan</div>
+        <div>
+          <h3><a href="https://doi.org/10.3390/app13010298" target="_blank" rel="noopener">Home Balconies during the COVID-19 Pandemic: Future Architect's Preferences in Lisbon and Warsaw</a></h3>
+          <div class="venue"><b>Applied Sciences, MDPI</b> · IF 2.8 · with C. C. Duarte, A. Stefańska, A. Stefańska</div>
+          <div class="badges"><span class="badge cite">20 citations</span><span class="badge">Scopus</span><span class="badge gray">Article</span></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="date"><span>2023</span>Apr</div>
+        <div>
+          <h3><a href="https://doi.org/10.3390/su15086751" target="_blank" rel="noopener">A State of Review on Instigating Resources and Technological Sustainable Approaches in Green Construction</a></h3>
+          <div class="venue"><b>Sustainability, MDPI</b> · IF 3.9 · with D. S. Vijayan, A. Stefańska, E. Koda, C. C. Duarte et al.</div>
+          <div class="badges"><span class="badge cite">16 citations</span><span class="badge">Scopus</span><span class="badge gray">Review</span></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="date"><span>2020</span>Jul</div>
+        <div>
+          <h3><a href="https://doi.org/10.1016/j.jobe.2020.101421" target="_blank" rel="noopener">Improving Residential Building Efficiency with Membranes over Façades: The Mediterranean Context</a></h3>
+          <div class="venue"><b>Journal of Building Engineering, Elsevier</b> · IF 7.1 · single author</div>
+          <div class="badges"><span class="badge cite">15 citations</span><span class="badge">Scopus</span><span class="badge gray">Article</span></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="date"><span>2025</span>Aug</div>
+        <div>
+          <h3><a href="https://doi.org/10.3390/buildings15152774" target="_blank" rel="noopener">Timber Architecture for Sustainable Futures: Design and Research Challenges in the Era of Environmental and Social Transition</a></h3>
+          <div class="venue"><b>Buildings, MDPI</b> · IF 3.1 · with A. Starzyk, C. C. Duarte, P. Łacek</div>
+          <div class="badges"><span class="badge cite">13 citations</span><span class="badge">Scopus</span><span class="badge gray">Critical Review</span></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="date"><span>2022</span>Mar</div>
+        <div>
+          <h3><a href="https://doi.org/10.3390/cleantechnol4010012" target="_blank" rel="noopener">The Energy Efficiency Post-COVID-19 in China's Office Buildings</a></h3>
+          <div class="venue"><b>Clean Technologies, MDPI</b> · with C. C. Duarte</div>
+          <div class="badges"><span class="badge cite">11 citations</span><span class="badge">Scopus</span><span class="badge gray">Article</span></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="date"><span>2024</span>Jul</div>
+        <div>
+          <h3><a href="https://doi.org/10.1016/j.tsep.2024.102740" target="_blank" rel="noopener">Enhancing Outdoor Comfort through Tensile Membrane Structures and Pavement Surfaces: A Case Study in Évora, Portugal</a></h3>
+          <div class="venue"><b>Thermal Science and Engineering Progress, Elsevier</b> · IF 5.1 · with D. Mateus, C. C. Duarte, A. Stefańska</div>
+          <div class="badges"><span class="badge cite">6 citations</span><span class="badge">Scopus</span><span class="badge gray">Article</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="center-btn">
+      <a class="btn line" href="https://orcid.org/0000-0002-9446-6199" target="_blank" rel="noopener">Full list on ORCID</a>
+    </div>
+  </div>
+</section>
+
+<!-- Events -->
+<section class="section events" id="events">
+  <div class="container">
+    <div class="section-title">
+      <h2>Conference Leadership &amp; Events</h2>
+      <p>Keynote speaker, chairman and scientific committee member in 20+ international conferences across Europe, Asia and the Americas — 44 events organized.</p>
+    </div>
+    <div class="grid">
+      <div class="event">
+        <div class="cal"><b>2026</b><span>Sep 2–4</span></div>
+        <div>
+          <h3>ICBSTS 2026 · 7th International Conference on Building Science, Technology and Sustainability</h3>
+          <p>Conference Chair — returning to Faculdade de Arquitetura, Universidade de Lisboa, jointly with the 12th ICAMC.</p>
+          <div class="loc">Lisbon, Portugal</div>
+          <div class="link"><a href="https://www.icbsts.org" target="_blank" rel="noopener">icbsts.org →</a></div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="cal"><b>2025</b><span>Sep 3–5</span></div>
+        <div>
+          <h3>ICBSTS 2025 &amp; ICAMC 2025 · Meijo University, Nagoya</h3>
+          <p>Conference Chairman, keynote speaker and program chair of the 6th ICBSTS and 11th ICAMC — presenting "AI tools on architectural design and rehabilitation."</p>
+          <div class="loc">Nagoya, Japan</div>
+          <div class="link"><a href="https://www.meijo-u.ac.jp/english/" target="_blank" rel="noopener">meijo-u.ac.jp →</a></div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="cal"><b>2025</b><span>Nov 17</span></div>
+        <div>
+          <h3>CIRMARE 2025 · VII International Congress on Recovery, Maintenance and Rehabilitation of Buildings</h3>
+          <p>Presented research on psychrometric models for climate-responsive architecture.</p>
+          <div class="loc">Porto, Portugal</div>
+          <div class="link"><a href="https://doi.org/10.1007/978-3-032-08224-4_55" target="_blank" rel="noopener">doi:10.1007 →</a></div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="cal"><b>2024</b><span>Oct 16–18</span></div>
+        <div>
+          <h3>ICBSTS 2024 · 5th International Conference on Building Science, Technology and Sustainability</h3>
+          <p>Host and program chair at FA-ULisboa; conference held in the Queen Sonja Room of Norway.</p>
+          <div class="loc">Lisbon, Portugal</div>
+          <div class="link"><a href="https://www.icbsts.org" target="_blank" rel="noopener">icbsts.org →</a></div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="cal"><b>2024</b><span>Jul 4–5</span></div>
+        <div>
+          <h3>EGRWSE 2024 · 5th Intl. Conference on Environmental Geotechnology, Recycled Waste Materials and Sustainable Engineering</h3>
+          <p>Presented two studies: circular economy in Poland's construction sector, and energy production potential of public spaces.</p>
+          <div class="loc">Warsaw, Poland</div>
+          <div class="link"><a href="https://iil.sggw.edu.pl/egrwse-2024/" target="_blank" rel="noopener">iil.sggw.edu.pl →</a></div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="cal"><b>2023</b><span>ICBSTS</span></div>
+        <div>
+          <h3>ICBSTS 2023 · Nanyang Technological University</h3>
+          <p>First abroad edition of the BSTS conference series, hosted at NTU Singapore.</p>
+          <div class="loc">Singapore</div>
+          <div class="link"><a href="https://www.icbsts.org" target="_blank" rel="noopener">icbsts.org →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partnerships -->
+<section class="section partners" id="partners">
+  <div class="container">
+    <div class="section-title">
+      <h2>Partnerships &amp; Affiliations</h2>
+      <p>International collaboration across research centers, universities and industry.</p>
+    </div>
+    <div class="grid">
+      <div class="partner"><div class="ico">🏛️</div><h4>FA.ULisboa</h4><p>Professor, Department of Technologies in Architecture, Urbanism and Design; former Vice-President of the management board.</p><div class="link"><a href="https://www.fa.ulisboa.pt" target="_blank" rel="noopener">fa.ulisboa.pt →</a></div></div>
+      <div class="partner"><div class="ico">🔬</div><h4>BSTS Lab</h4><p>Co-founder and senior researcher — Building Science, Technology and Sustainability Laboratory (est. 2020).</p><div class="link muted">No dedicated public site yet</div></div>
+      <div class="partner"><div class="ico">📐</div><h4>CIAUD</h4><p>Research Center for Architecture, Urbanism and Design — member since 2015, coordinating research projects.</p><div class="link"><a href="https://ciaud.fa.ulisboa.pt" target="_blank" rel="noopener">ciaud.fa.ulisboa.pt →</a></div></div>
+      <div class="partner"><div class="ico">🇪🇺</div><h4>Horizon 2020 SHARP</h4><p>Leadership in European-funded research on environmental performance and energy optimization.</p><div class="link muted">No public project page found</div></div>
+      <div class="partner"><div class="ico">🇵🇱</div><h4>SGGW Warsaw</h4><p>Warsaw University of Life Sciences — visiting lecturer, Environmental Comfort and Energy Efficiency; joint publications.</p><div class="link"><a href="https://www.sggw.edu.pl" target="_blank" rel="noopener">sggw.edu.pl →</a></div></div>
+      <div class="partner"><div class="ico">🇮🇹</div><h4>Politecnico di Milano</h4><p>International lecturing and collaboration on integrated building systems and sustainable evaluation.</p><div class="link"><a href="https://www.polimi.it" target="_blank" rel="noopener">polimi.it →</a></div></div>
+      <div class="partner"><div class="ico">🇸🇬</div><h4>NTU Singapore</h4><p>Host of ICBSTS 2023 — the BSTS conference series' first edition in Asia.</p><div class="link"><a href="https://www.ntu.edu.sg" target="_blank" rel="noopener">ntu.edu.sg →</a></div></div>
+      <div class="partner"><div class="ico">🇯🇵</div><h4>Meijo University, Nagoya</h4><p>Host of ICBSTS 2025 and ICAMC 2025 — Conference Chairman, keynote speaker and program chair (September 2025).</p><div class="link"><a href="https://www.meijo-u.ac.jp/english/" target="_blank" rel="noopener">meijo-u.ac.jp →</a></div></div>
+      <div class="partner"><div class="ico">🇯🇵</div><h4>Tokyo University of Technology</h4><p>Conference Chairman and keynote speaker at ICBMC'20 — 5th International Conference on Building Materials and Construction (2020).</p><div class="link"><a href="https://www.teu.ac.jp/english/index.html" target="_blank" rel="noopener">teu.ac.jp →</a></div></div>
+      <div class="partner"><div class="ico">🇫🇷</div><h4>Yes We Camp (YWC)</h4><p>Coordinator of the Erasmus+ KA220-HED project CLASS — Collective Learning Around Sustainable Spaces (2025–2028), with Nuno Dinis Cortiços as FA.ULisboa Principal Researcher.</p><div class="link"><a href="https://yeswecamp.org/en/" target="_blank" rel="noopener">yeswecamp.org →</a></div></div>
+      <div class="partner"><div class="ico">🇩🇪</div><h4>Tübingen University</h4><p>CLASS consortium partner — European cooperation on collective learning and sustainable spaces.</p><div class="link"><a href="https://uni-tuebingen.de/en/" target="_blank" rel="noopener">uni-tuebingen.de →</a></div></div>
+      <div class="partner"><div class="ico">🇫🇷</div><h4>Ancoats &amp; Coop'Eskemm</h4><p>French partners of the CLASS Erasmus+ consortium, alongside Yes We Camp and Tübingen University.</p><div class="link"><a href="https://coopeskemm.org/" target="_blank" rel="noopener">coopeskemm.org →</a> <span class="muted">(Ancoats — no public link)</span></div></div>
+      <div class="partner"><div class="ico">🏛️</div><h4>FA.ULisboa Vice-Presidency</h4><p>Vice-President of the Management Board of the Faculdade de Arquitetura, Universidade de Lisboa (2015–2016) — institutional governance and leadership.</p><div class="link"><a href="https://www.fa.ulisboa.pt" target="_blank" rel="noopener">fa.ulisboa.pt →</a></div></div>
+      <div class="partner"><div class="ico">🇬🇧</div><h4>University of Nottingham</h4><p>Invited speaker, Department of Engineering — AI integration in building design (2024).</p><div class="link"><a href="https://www.nottingham.ac.uk" target="_blank" rel="noopener">nottingham.ac.uk →</a></div></div>
+      <div class="partner"><div class="ico">🏗️</div><h4>Saraiva + Associados</h4><p>Academy engagement bridging architectural innovation and emerging digital technologies.</p><div class="link"><a href="https://www.saraivaeassociados.com/pt-pt/academy/" target="_blank" rel="noopener">S+Academy →</a></div></div>
+      <div class="partner"><div class="ico">🇵🇹</div><h4>FCT</h4><p>Fundação para a Ciência e a Tecnologia — funded projects, including the X-TEND residential extension prototype.</p><div class="link"><a href="https://www.fct.pt" target="_blank" rel="noopener">fct.pt →</a></div></div>
+      <div class="partner"><div class="ico">🎓</div><h4>Ordem dos Arquitectos</h4><p>Portuguese Architects Association — "Best Student Work of the Year" award (1999).</p><div class="link"><a href="https://www.ordemdosarquitectos.pt" target="_blank" rel="noopener">ordemdosarquitectos.pt →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaching -->
+<section class="section teaching" id="teaching">
+  <div class="container">
+    <div class="section-title">
+      <h2>Teaching</h2>
+      <p>Technology-integrated curriculum across three cycles at FA-ULisboa and SGGW, plus supervision of MSc and Ph.D. research.</p>
+    </div>
+    <div class="grid">
+      <div class="level">
+        <h3>Bachelor's Level</h3>
+        <div class="sub">Foundations of Construction</div>
+        <ul>
+          <li>Building I, II, III, IV</li>
+          <li>Materials I and II</li>
+          <li>Special Constructions</li>
+          <li>Construction Physics</li>
+        </ul>
+      </div>
+      <div class="level accent">
+        <h3>Master's Level</h3>
+        <div class="sub">FA-ULisboa · SGGW Warsaw</div>
+        <ul>
+          <li>Environmental Comfort and Energy Efficiency</li>
+          <li>Sustainability Systems</li>
+          <li>Circular Economy</li>
+          <li>Energy Recovery &amp; Energy Update</li>
+        </ul>
+      </div>
+      <div class="level">
+        <h3>Doctoral Level</h3>
+        <div class="sub">Research Supervision · 5 MSc completed · 3 Ph.D. ongoing</div>
+        <ul>
+          <li>Artificial Intelligence Applied to Cities and Buildings</li>
+          <li>AI Applied to Research (IA Aplicada à Investigação)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <div class="logo">Nuno Dinis <span style="color:var(--accent)">Cortiços</span></div>
+        <p>Professor at the Lisbon School of Architecture, Universidade de Lisboa (FA.ULisboa), and Researcher at CIAUD — the Research Centre for Architecture, Urbanism and Design. Researching the sustainable future of existing buildings, where conservation meets artificial intelligence and energy performance.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>✉ <a href="mailto:ncorticos@edu.ulisboa.pt">ncorticos@edu.ulisboa.pt</a></li>
+          <li>📍 Faculdade de Arquitetura, Universidade de Lisboa — Rua Sá Nogueira, Lisboa, Portugal</li>
+          <li class="wa-line">💬 WhatsApp: ncorticos
+            <div class="qr-card">
+              <div class="inner">
+                <img src="images/whatsapp-qr.png" alt="WhatsApp QR code — ncorticos" onerror="this.closest('.qr-card').style.display='none'">
+                <span>Scan to chat on WhatsApp</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4>Research Profiles</h4>
+        <ul>
+          <li><a href="https://orcid.org/0000-0002-9446-6199" target="_blank" rel="noopener">ORCID · 0000-0002-9446-6199</a></li>
+          <li><a href="https://www.scopus.com/authid/detail.uri?authorId=57190673653" target="_blank" rel="noopener">Scopus · 57190673653</a></li>
+          <li><a href="https://www.webofscience.com/wos/author/record/S-2095-2017" target="_blank" rel="noopener">ResearcherID · S-2095-2017</a></li>
+          <li><a href="https://www.cienciavitae.pt" target="_blank" rel="noopener">Ciência ID · B910-24D4-795A</a></li>
+          <li><a href="https://www.researchgate.net/profile/Nuno-Corticos" target="_blank" rel="noopener">ResearchGate</a></li>
+          <li><a href="https://www.linkedin.com/in/nuno-dinis-corti%C3%A7os-0972b820/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footbar">
+    <div class="container">© 2026 Nuno Dinis Cortiços · Building Science, Technology and Sustainability</div>
+  </div>
+</footer>
+
+<script>
+// Animated counters
+const counters=document.querySelectorAll('.counter h3');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,target=+el.dataset.count,dur=1400,t0=performance.now();
+    const tick=t=>{const p=Math.min((t-t0)/dur,1);el.textContent=Math.round(target*p);if(p<1)requestAnimationFrame(tick)};
+    requestAnimationFrame(tick);
+    io.unobserve(el);
+  });
+},{threshold:.4});
+counters.forEach(c=>io.observe(c));
+// Close mobile menu on click
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+</script>
+</body>
+</html>
