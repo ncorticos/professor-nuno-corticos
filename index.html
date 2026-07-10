@@ -137,6 +137,9 @@ a.src:hover{color:var(--accent)}
 
 /* Events timeline */
 .events .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+.agenda .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+.agenda .role-tags{margin-bottom:10px;display:flex;gap:8px;flex-wrap:wrap}
+.agenda-note{margin-top:36px;text-align:center;font-size:12.5px;color:#9aa0b0;font-style:italic;max-width:640px;margin-left:auto;margin-right:auto}
 .event{border:1px solid #eceff5;border-radius:6px;padding:30px;display:flex;gap:24px;background:#fff;box-shadow:0 6px 18px rgba(56,65,88,.05)}
 .event .cal{min-width:78px;height:84px;background:var(--dark);border-radius:6px;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Poppins',sans-serif}
 .event .cal b{font-size:24px;color:var(--accent)}
@@ -189,7 +192,7 @@ footer .logo{color:#fff;margin-bottom:14px}
 @media(max-width:960px){
   .hero .container,.about .container{grid-template-columns:1fr}
   .hero h1{font-size:38px}
-  .features .grid,.cards,.teaching .grid,.events .grid{grid-template-columns:1fr}
+  .features .grid,.cards,.teaching .grid,.events .grid,.agenda .grid{grid-template-columns:1fr}
   .counters .grid{grid-template-columns:repeat(2,1fr);gap:36px}
   .partners .grid{grid-template-columns:repeat(2,1fr)}
   footer .grid{grid-template-columns:1fr}
@@ -231,6 +234,7 @@ footer .logo{color:#fff;margin-bottom:14px}
         <li><a href="#recent">Recent Work</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#events">Events</a></li>
+        <li><a href="#agenda">Agenda</a></li>
         <li><a href="#partners">Partnerships</a></li>
         <li><a href="#teaching">Teaching</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -562,6 +566,82 @@ footer .logo{color:#fff;margin-bottom:14px}
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Public Agenda -->
+<section class="section agenda" id="agenda">
+  <div class="container">
+    <div class="section-title">
+      <h2>Public Agenda</h2>
+      <p>Serving as opponent, examiner and committee chair in Ph.D. and Master's thesis presentations at Faculdade de Arquitetura, Universidade de Lisboa.</p>
+    </div>
+    <div class="grid">
+      <div class="event">
+        <div class="cal"><b>2025</b><span>Apr 24</span></div>
+        <div>
+          <div class="role-tags"><span class="badge">Ph.D. Opponent</span></div>
+          <h3>Sanad Mashal A. Nahar — Climate Change Adaptability through Building Performance</h3>
+          <p>The case of large-scale commercial construction projects in Amman, Jordan.</p>
+          <div class="loc">Faculdade de Arquitetura, Universidade de Lisboa</div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="cal"><b>2022</b><span>Jan 24</span></div>
+        <div>
+          <div class="role-tags"><span class="badge">Master's Examiner</span><span class="badge gray">17/20</span></div>
+          <h3>Diogo Miguel Cavaco de Sousa Pereira de Carvalho — Research Centre for the Forest</h3>
+          <p>The facility as a pole of attraction and local development in low-density territories.</p>
+          <div class="loc">Faculdade de Arquitetura, Universidade de Lisboa</div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="cal"><b>2022</b><span>Jan 24</span></div>
+        <div>
+          <div class="role-tags"><span class="badge">Master's Examiner</span><span class="badge gray">16/20</span></div>
+          <h3>Gonçalo Pulquério Marques — Resilient Territories to Fires, Monchique</h3>
+          <p>Research centre as a factor for development and (re)population.</p>
+          <div class="loc">Faculdade de Arquitetura, Universidade de Lisboa</div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="cal"><b>2021</b><span>Jan 28</span></div>
+        <div>
+          <div class="role-tags"><span class="badge">Master's Examiner</span><span class="badge gray">16/20</span></div>
+          <h3>Paula Rosa Simões Braga — Monchique's Forested: Fire Museum</h3>
+          <p>Reforestation strategy and a fire museum for the municipality of Monchique.</p>
+          <div class="loc">Faculdade de Arquitetura, Universidade de Lisboa</div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="cal"><b>2019</b><span>May 22</span></div>
+        <div>
+          <div class="role-tags"><span class="badge">Ph.D. Opponent</span></div>
+          <h3>Alexandrino José Basto Diogo — Structural Phenomenology of Double Curvature</h3>
+          <p>An operative paradigm for the management of morphogenesis in architectural ideation.</p>
+          <div class="loc">Faculdade de Arquitetura, Universidade de Lisboa</div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="cal"><b>2019</b><span>Feb 13</span></div>
+        <div>
+          <div class="role-tags"><span class="badge">Ph.D. Opponent</span></div>
+          <h3>Carla Sofia Miguéis Gonçalves Cachadinha — Active Aging in Urban Environments</h3>
+          <p>Development of two analytical instruments for assessing the built environment.</p>
+          <div class="loc">Faculdade de Arquitetura, Universidade de Lisboa</div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="cal"><b>2018</b><span>Dec 13</span></div>
+        <div>
+          <div class="role-tags"><span class="badge">Committee President</span></div>
+          <h3>Ângela Diogo Nogueira — Sustainable Rehabilitation of Pombal Palace, Lisbon</h3>
+          <p>Proposal for intervention in a heritage-protected palace building.</p>
+          <div class="loc">Faculdade de Arquitetura, Universidade de Lisboa</div>
+        </div>
+      </div>
+    </div>
+    <p class="agenda-note">Selected highlights from an ongoing record of jury service — full list available on request. No individual public listing exists per defense; sourced directly from official FA.ULisboa academic records.</p>
   </div>
 </section>
 
