@@ -108,6 +108,7 @@ a.src:hover{color:var(--accent)}
 .card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(56,65,88,.14)}
 .card-top{height:8px;background:var(--accent)}
 .card-top.navy{background:var(--dark)}
+.card.highlight{border-color:var(--accent);box-shadow:0 10px 26px rgba(20,189,238,.22)}
 .card-body{padding:28px;flex:1;display:flex;flex-direction:column}
 .card .meta{font-size:11.5px;text-transform:uppercase;letter-spacing:1.4px;color:var(--accent);font-family:'Poppins',sans-serif;font-weight:600;margin-bottom:10px}
 .card h3{font-size:17px;line-height:1.5;margin-bottom:12px}
@@ -582,8 +583,17 @@ footer .logo{color:#fff;margin-bottom:14px}
 
     <h3 class="agenda-sub">Upcoming — Supervision Nearing Defense</h3>
     <div class="cards agenda-upcoming">
+      <div class="card highlight">
+        <div class="card-top"></div>
+        <div class="card-body">
+          <div class="meta">Master's Final Project · Defense Scheduled · Week of Jul 13–17, 2026</div>
+          <h3>Alexandre Jorge da Silva Martins — Digital Technologies in Architecture</h3>
+          <p>"Artificial Intelligence as the Architect's Tool" — Integrated Master's in Architecture. Co-supervised with Nuno Filipe Santos de Castro Montenegro. Jury: Francisco José de Almeida dos Santos e Agostinho (President), Nuno Filipe Santos de Castro Montenegro, José Nuno Dinis Cabral Beirão (Vowels).</p>
+          <div class="foot muted">Faculdade de Arquitetura, Universidade de Lisboa · exact day/time pending official scheduling</div>
+        </div>
+      </div>
       <div class="card">
-        <div class="card-top navy"></div>
+        <div class="card-top"></div>
         <div class="card-body">
           <div class="meta">Ph.D. Supervision · In Development</div>
           <h3>Zichen Liang — AI-Driven Energy Modeling and Retrofit Strategies</h3>
@@ -592,7 +602,7 @@ footer .logo{color:#fff;margin-bottom:14px}
         </div>
       </div>
       <div class="card">
-        <div class="card-top"></div>
+        <div class="card-top navy"></div>
         <div class="card-body">
           <div class="meta">Ph.D. Supervision · Ongoing</div>
           <h3>Zheng Xue — Artificial Intelligence Applied to Modular Construction</h3>
@@ -601,7 +611,7 @@ footer .logo{color:#fff;margin-bottom:14px}
         </div>
       </div>
       <div class="card">
-        <div class="card-top navy"></div>
+        <div class="card-top"></div>
         <div class="card-body">
           <div class="meta">Master's Supervision · Ongoing</div>
           <h3>Patrícia Alexandra Moreira Oliveira — At the Limits of the Future</h3>
@@ -610,7 +620,7 @@ footer .logo{color:#fff;margin-bottom:14px}
         </div>
       </div>
       <div class="card">
-        <div class="card-top"></div>
+        <div class="card-top navy"></div>
         <div class="card-body">
           <div class="meta">Master's Supervision · Ongoing</div>
           <h3>Maria Madalena Ramos Soares Ribeiro — Resilience in Traditional Housing</h3>
@@ -619,7 +629,7 @@ footer .logo{color:#fff;margin-bottom:14px}
         </div>
       </div>
       <div class="card">
-        <div class="card-top navy"></div>
+        <div class="card-top"></div>
         <div class="card-body">
           <div class="meta">Master's Supervision · Ongoing</div>
           <h3>André Filipe Veloso Moreira — Designing Temporary Housing Spaces</h3>
