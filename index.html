@@ -149,12 +149,13 @@ a.src:hover{color:var(--accent)}
 .center-btn{text-align:center;margin-top:40px}
 .center-btn .btn.line{background:transparent;border:2px solid var(--accent);color:var(--accent);cursor:pointer;font-family:'Poppins',sans-serif}
 .center-btn .btn.line:hover{background:var(--accent);color:#fff}
-.full-pub-list{max-height:0;overflow:hidden;transition:max-height .35s ease;max-width:900px;margin:0 auto}
-.full-pub-list.open{max-height:4000px;margin-top:36px}
-.full-pub-list ol{list-style:decimal;padding-left:22px;display:flex;flex-direction:column;gap:14px}
-.full-pub-list li{font-size:13.5px;line-height:1.75;color:var(--body)}
-.full-pub-list li a{color:var(--accent-dark)}
-.full-pub-list .agenda-note{margin-top:26px}
+.full-list{max-height:0;overflow:hidden;transition:max-height .35s ease;max-width:900px;margin:0 auto}
+.full-list.open{max-height:6000px;margin-top:36px}
+.full-list ol{list-style:decimal;padding-left:22px;display:flex;flex-direction:column;gap:14px}
+.full-list li{font-size:13.5px;line-height:1.75;color:var(--body)}
+.full-list li a{color:var(--accent-dark)}
+.full-list li b{color:var(--dark);font-weight:600}
+.full-list .agenda-note{margin-top:26px}
 
 /* Events timeline */
 .events .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
@@ -518,7 +519,7 @@ footer .logo{color:#fff;margin-bottom:14px}
     <div class="center-btn">
       <button class="btn line" id="fullPubToggle">Full List (28)</button>
     </div>
-    <div class="full-pub-list" id="fullPubList">
+    <div class="full-list" id="fullPubList">
       <ol>
         <li>Cortiços, N. D., &amp; Duarte, C. C. (2025). Comparative Analysis of Psychrometric Models for Climate-Responsive Architecture. <em>Proceedings of CIRMARE 2025</em>, pp. 650–658. Springer Nature. <a href="https://doi.org/10.1007/978-3-032-08224-4_55" target="_blank" rel="noopener">doi:10.1007/978-3-032-08224-4_55</a></li>
         <li>Cortiços, N. D., &amp; Duarte, C. C. (2025). Circular Economy in Action: Assessing Poland's Construction Sector's Transition and Challenges. <em>Solid Waste and Recycling</em>, Vol. 579, pp. 157–169. Springer Nature. <a href="https://doi.org/10.1007/978-981-96-1945-0_14" target="_blank" rel="noopener">doi:10.1007/978-981-96-1945-0_14</a></li>
@@ -616,6 +617,29 @@ footer .logo{color:#fff;margin-bottom:14px}
           <div class="link"><a href="https://www.icbsts.org" target="_blank" rel="noopener">icbsts.org →</a></div>
         </div>
       </div>
+    </div>
+    <div class="center-btn">
+      <button class="btn line" id="fullEventsToggle">Full List (16)</button>
+    </div>
+    <div class="full-list" id="fullEventsList">
+      <ol>
+        <li><b>Oct 16–18, 2025</b> — ICBMM'25, 9th International Conference on Building Materials and Materials Engineering. Invited Program Chair and Editor. University of Naples Federico II, Naples, Italy.</li>
+        <li><b>Sep 3–5, 2025</b> — ICAMC 2025, 11th International Conference on Architecture, Materials and Construction. Invited Program Chair and Editor. Meijo University, Nagoya, Japan.</li>
+        <li><b>Sep 3–5, 2025</b> — ICBSTS 2025, 6th International Conference on Building Science, Technology and Sustainability. Invited Keynote, Conference Chair, Scientific Board Member, Co-organizer. Meijo University, Nagoya, Japan.</li>
+        <li><b>Oct 27–29, 2024</b> — ICAMC 2024, 10th International Conference on Architecture, Materials and Construction. Invited Program Chair and Editor. Faculdade de Arquitetura, Universidade de Lisboa, Portugal.</li>
+        <li><b>Oct 27–29, 2024</b> — ICBSTS 2024, 5th International Conference on Building Science, Technology and Sustainability. Invited Keynote, Conference Chair, Scientific Board Member, Co-organizer. Faculdade de Arquitetura, Universidade de Lisboa, Portugal.</li>
+        <li><b>Jun 14–16, 2023</b> — ICAMC 2023, 9th International Conference on Architecture, Materials and Construction. Invited Program Chair and Editor. Singapore.</li>
+        <li><b>Jun 14–16, 2023</b> — ICBSTS, 4th International Conference on Building Science, Technology and Sustainability. Invited Keynote, Conference Chair, Scientific Board Member, Co-organizer. Singapore.</li>
+        <li><b>Oct 27–28, 2022</b> — ICAMC 2022, 8th International Conference on Architecture, Materials and Construction. Co-organizer and Program Chair. Faculdade de Arquitetura, Universidade de Lisboa, Portugal.</li>
+        <li><b>Oct 27–28, 2022</b> — ICBSTS, 3rd International Conference on Building Science, Technology and Sustainability. Invited Keynote, Conference Chair, Scientific Board Member, Co-organizer. Faculdade de Arquitetura, Universidade de Lisboa, Portugal.</li>
+        <li><b>May 25–27, 2022</b> — ICIDAE 2022, 2nd International Conference on Interactive Design, Architecture and Engineering. Co-organizer and Program Chair. Warsaw University of Technology, Poland.</li>
+        <li><b>Oct 27–29, 2021</b> — ICAMC 2021, 7th International Conference on Architecture, Materials and Construction. Co-organizer and Program Chair. Faculdade de Arquitetura, Universidade de Lisboa, Portugal.</li>
+        <li><b>Oct 27–29, 2021</b> — ICBSTS 2021, 2nd International Conference on Building Science, Technology and Sustainability. Invited Keynote, Conference Chair, Scientific Board Member, Co-organizer. Faculdade de Arquitetura, Universidade de Lisboa, Portugal.</li>
+        <li><b>Mar 17–19, 2021</b> — ICIDAE 2021, 1st International Conference on Interactive Design, Architecture and Engineering. Invited Keynote, Conference Chair, Scientific Board Member, Co-organizer. Suzhou University of Science and Technology, China (virtual).</li>
+        <li><b>Oct 27–29, 2020</b> — ICBSTS 2020, 1st International Conference on Building Science, Technology and Sustainability. Invited Keynote, Conference Chair, Scientific Board Member, Co-organizer. Faculdade de Arquitetura, Universidade de Lisboa, Portugal.</li>
+        <li><b>Dec 3–5, 2019</b> — ICBMM 2019, 3rd International Conference on Building Materials and Materials Engineering. Invited Keynote, Conference Chair, Scientific Board Member. Faculdade de Arquitetura, Universidade de Lisboa, Portugal.</li>
+        <li><b>Sep 26–28, 2018</b> — ICBMM 2018, 2nd International Conference on Building Materials and Materials Engineering. Invited Keynote, Scientific Board Member. Universidade Nova de Lisboa, Portugal.</li>
+      </ol>
     </div>
   </div>
 </section>
@@ -748,7 +772,18 @@ footer .logo{color:#fff;margin-bottom:14px}
         </div>
       </div>
     </div>
-    <p class="agenda-note">Selected highlights from an ongoing record of jury service — full list available on request. No individual public listing exists per defense; sourced directly from official FA.ULisboa academic records.</p>
+    <div class="center-btn">
+      <button class="btn line" id="fullAgendaToggle">Full List (7)</button>
+    </div>
+    <div class="full-list" id="fullAgendaList">
+      <ol>
+        <li><b>Jan 28, 2021</b> — Master's Examiner (16/20). Paula Rosa Simões Braga — "Monchique's Forested: Fire Museum." Reforestation strategy and a fire museum for the municipality of Monchique. Faculdade de Arquitetura, Universidade de Lisboa.</li>
+        <li><b>May 22, 2019</b> — Ph.D. Opponent. Alexandrino José Basto Diogo — "Structural Phenomenology of Double Curvature." An operative paradigm for the management of morphogenesis in architectural ideation. Faculdade de Arquitetura, Universidade de Lisboa.</li>
+        <li><b>Feb 13, 2019</b> — Ph.D. Opponent. Carla Sofia Miguéis Gonçalves Cachadinha — "Active Aging in Urban Environments." Development of two analytical instruments for assessing the built environment. Faculdade de Arquitetura, Universidade de Lisboa.</li>
+        <li><b>Dec 13, 2018</b> — Committee President. Ângela Diogo Nogueira — "Sustainable Rehabilitation of Pombal Palace, Lisbon." Proposal for intervention in a heritage-protected palace building. Faculdade de Arquitetura, Universidade de Lisboa.</li>
+      </ol>
+      <p class="agenda-note">Selected highlights from an ongoing record of jury service — full list available on request. No individual public listing exists per defense; sourced directly from official FA.ULisboa academic records.</p>
+    </div>
   </div>
 </section>
 
@@ -877,17 +912,20 @@ counters.forEach(c=>io.observe(c));
 // Close mobile menu on click
 document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
 
-// Full publications list toggle
-(function(){
-  const btn=document.getElementById('fullPubToggle');
-  const list=document.getElementById('fullPubList');
+// Full list toggles (Publications, Events, Public Agenda)
+function initFullListToggle(btnId,listId,closedLabel){
+  const btn=document.getElementById(btnId);
+  const list=document.getElementById(listId);
   if(!btn||!list)return;
   btn.addEventListener('click',()=>{
     const open=list.classList.toggle('open');
-    btn.textContent=open?'Hide Full List':'Full List (28)';
+    btn.textContent=open?'Hide Full List':closedLabel;
     if(open)setTimeout(()=>list.scrollIntoView({behavior:'smooth',block:'nearest'}),200);
   });
-})();
+}
+initFullListToggle('fullPubToggle','fullPubList','Full List (28)');
+initFullListToggle('fullEventsToggle','fullEventsList','Full List (16)');
+initFullListToggle('fullAgendaToggle','fullAgendaList','Full List (7)');
 
 // Site search
 (function(){
