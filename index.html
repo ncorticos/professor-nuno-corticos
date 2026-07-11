@@ -147,8 +147,14 @@ a.src:hover{color:var(--accent)}
 .badge.gray{background:#f1f3f8;color:var(--dark);border-color:#e0e5ef}
 .badge.cite{background:var(--dark);color:#fff;border-color:var(--dark)}
 .center-btn{text-align:center;margin-top:40px}
-.center-btn .btn.line{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.center-btn .btn.line{background:transparent;border:2px solid var(--accent);color:var(--accent);cursor:pointer;font-family:'Poppins',sans-serif}
 .center-btn .btn.line:hover{background:var(--accent);color:#fff}
+.full-pub-list{max-height:0;overflow:hidden;transition:max-height .35s ease;max-width:900px;margin:0 auto}
+.full-pub-list.open{max-height:4000px;margin-top:36px}
+.full-pub-list ol{list-style:decimal;padding-left:22px;display:flex;flex-direction:column;gap:14px}
+.full-pub-list li{font-size:13.5px;line-height:1.75;color:var(--body)}
+.full-pub-list li a{color:var(--accent-dark)}
+.full-pub-list .agenda-note{margin-top:26px}
 
 /* Events timeline */
 .events .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
@@ -510,7 +516,40 @@ footer .logo{color:#fff;margin-bottom:14px}
       </div>
     </div>
     <div class="center-btn">
-      <a class="btn line" href="https://orcid.org/0000-0002-9446-6199" target="_blank" rel="noopener">Full list on ORCID</a>
+      <button class="btn line" id="fullPubToggle">Full List (28)</button>
+    </div>
+    <div class="full-pub-list" id="fullPubList">
+      <ol>
+        <li>Cortiços, N. D., &amp; Duarte, C. C. (2025). Comparative Analysis of Psychrometric Models for Climate-Responsive Architecture. <em>Proceedings of CIRMARE 2025</em>, pp. 650–658. Springer Nature. <a href="https://doi.org/10.1007/978-3-032-08224-4_55" target="_blank" rel="noopener">doi:10.1007/978-3-032-08224-4_55</a></li>
+        <li>Cortiços, N. D., &amp; Duarte, C. C. (2025). Circular Economy in Action: Assessing Poland's Construction Sector's Transition and Challenges. <em>Solid Waste and Recycling</em>, Vol. 579, pp. 157–169. Springer Nature. <a href="https://doi.org/10.1007/978-981-96-1945-0_14" target="_blank" rel="noopener">doi:10.1007/978-981-96-1945-0_14</a></li>
+        <li>Cortiços, N. D., Zheng, X., &amp; Duarte, C. C. (2025). The Impact of Artificial Intelligence on Architecture: A Comprehensive Analysis of AI Software Tools and Their Global Adoption. <em>Proceedings of the 10th ICAMC</em>, Vol. 664, pp. 152–169. Springer Nature. <a href="https://doi.org/10.1007/978-981-96-7687-3_15" target="_blank" rel="noopener">doi:10.1007/978-981-96-7687-3_15</a></li>
+        <li>Cortiços, N. D., &amp; Duarte, C. C. (2025). Climate Resilience and Adaptive Strategies for Flood Mitigation: The Valencia Paradigm. <em>Sustainability</em>, 17(11). <a href="https://doi.org/10.3390/su17114980" target="_blank" rel="noopener">doi:10.3390/su17114980</a></li>
+        <li>Duarte, C. C., &amp; Cortiços, N. D. (2025). The Power of Public Spaces: An Overview of Energy Production Potential. <em>Sustainable GeoInfrastructure</em>, Vol. 3, pp. 61–72. Springer Nature. <a href="https://doi.org/10.1007/978-981-96-2710-3_7" target="_blank" rel="noopener">doi:10.1007/978-981-96-2710-3_7</a></li>
+        <li>Cortiços, N. D., &amp; Duarte, C. C. (2024). Tensile Membranes and Public Spaces Thermal Comfort: An Analytical Review. <em>E3S Web of Conferences</em>, 586, 04004. <a href="https://doi.org/10.1051/e3sconf/202458604004" target="_blank" rel="noopener">doi:10.1051/e3sconf/202458604004</a></li>
+        <li>Cortiços, N. D., Mateus, D., Duarte, C. C., &amp; Stefańska, A. (2024). Enhancing Outdoor Comfort through Tensile Membrane Structures and Pavement Surfaces: A Case Study Report in Évora, Portugal. <em>Thermal Science and Engineering Progress</em>, 53, 102740. <a href="https://doi.org/10.1016/j.tsep.2024.102740" target="_blank" rel="noopener">doi:10.1016/j.tsep.2024.102740</a></li>
+        <li>Duarte, C. C., Cortiços, N. D., Stefańska, A., Mateus, D., &amp; Monticelli, C. (Eds.). (2024). The Adaptability of Residential Planning and Design to World-Changing Events. MDPI. <a href="https://doi.org/10.3390/books978-3-7258-0211-1" target="_blank" rel="noopener">doi:10.3390/books978-3-7258-0211-1</a></li>
+        <li>Duarte, C. C., Cortiços, N. D., Stefańska, A., Mateus, D., &amp; Monticelli, C. (2024). The Adaptability of Residential Planning and Design to World-Changing Events. <em>Buildings</em>, 14(1). <a href="https://doi.org/10.3390/buildings14010009" target="_blank" rel="noopener">doi:10.3390/buildings14010009</a></li>
+        <li>Cortiços, N. D., &amp; Duarte, C. C. (2023). Artificial Intelligence Impact on Buildings Energy Efficiency. <em>2023 7th International Conference on Computer, Software and Modeling (ICCSM)</em>, IEEE, Paris, France, 56–61. <a href="https://doi.org/10.1109/ICCSM60247.2023.00020" target="_blank" rel="noopener">doi:10.1109/ICCSM60247.2023.00020</a></li>
+        <li>Vijayan, D. S., Devarajan, P., Sivasuriyan, A., Stefańska, A., Koda, E., Jakimiuk, A., Vaverková, M. D., Winkler, J., Duarte, C. C., &amp; Cortiços, N. D. (2023). A State of Review on Instigating Resources and Technological Sustainable Approaches in Green Construction. <em>Sustainability</em>, 15(8). <a href="https://doi.org/10.3390/su15086751" target="_blank" rel="noopener">doi:10.3390/su15086751</a></li>
+        <li>Duarte, C. C., Cortiços, N. D., Stefańska, A., &amp; Stefańska, A. (2023). Home Balconies during the COVID-19 Pandemic: Future Architect's Preferences in Lisbon and Warsaw. <em>Applied Sciences</em>, 13(1). <a href="https://doi.org/10.3390/app13010298" target="_blank" rel="noopener">doi:10.3390/app13010298</a></li>
+        <li>Cortiços, N. D., &amp; Duarte, C. C. (2022). Energy Efficiency in Large Office Buildings post-COVID-19 in Europe's Top Five Economies. <em>Energy for Sustainable Development</em>, 68, 410–424. <a href="https://doi.org/10.1016/j.esd.2022.04.006" target="_blank" rel="noopener">doi:10.1016/j.esd.2022.04.006</a></li>
+        <li>Duarte, C. C., &amp; Cortiços, N. D. (2022). The Energy Efficiency Post-COVID-19 in China's Office Buildings. <em>Clean Technologies</em>, 4(1), 174–233. <a href="https://doi.org/10.3390/cleantechnol4010012" target="_blank" rel="noopener">doi:10.3390/cleantechnol4010012</a></li>
+        <li>Cortiços, N. D., &amp; Mendonça, P. <em>Lecture Notes in Civil Engineering</em>, Springer, 226. <a href="https://doi.org/10.1007/978-3-030-94514-5" target="_blank" rel="noopener">doi:10.1007/978-3-030-94514-5</a></li>
+        <li>Cortiços, N. D. Labels' Standard Deviation in Energy Performance Certificates: Portuguese Housing. <em>Journal of Sustainable Research</em>, 210019. <a href="https://doi.org/10.20900/jsr20210019" target="_blank" rel="noopener">doi:10.20900/jsr20210019</a></li>
+        <li>Cortiços, N. D., &amp; Duarte, C. C. (2021). COVID-19: The Impact in US High-Rise Office Buildings Energy Efficiency. <em>Energy and Buildings</em>, 249, 111180. <a href="https://doi.org/10.1016/j.enbuild.2021.111180" target="_blank" rel="noopener">doi:10.1016/j.enbuild.2021.111180</a></li>
+        <li>Cortiços, N. D. Improving Residential Building Efficiency with Membranes over Façades: The Mediterranean Context. <em>Journal of Building Engineering</em>, 32, 101421. <a href="https://doi.org/10.1016/j.jobe.2020.101421" target="_blank" rel="noopener">doi:10.1016/j.jobe.2020.101421</a></li>
+        <li>Cortiços, N. D., Irina, T., Diogo, A. B., Reis Paulo, L., &amp; Morais, A. J. Textiles, Identity and Innovation: In Touch. Taylor and Francis CRC Press. <a href="https://doi.org/10.1201/9780429286872-57" target="_blank" rel="noopener">doi:10.1201/9780429286872-57</a></li>
+        <li>Cortiços, N. D. Self-Learning and Self-Repairing Technologies to Establish Autonomous Building Maintenance. <em>MATEC Web of Conferences</em>, 278, 04004. <a href="https://doi.org/10.1051/matecconf/201927804004" target="_blank" rel="noopener">doi:10.1051/matecconf/201927804004</a></li>
+        <li>Cortiços, N. D. Renovation Tool to Improve Building Stock Performance — Higher Education Context. <em>Sustainable Cities and Society</em>, 47, 101368. <a href="https://doi.org/10.1016/j.scs.2018.11.043" target="_blank" rel="noopener">doi:10.1016/j.scs.2018.11.043</a></li>
+        <li>Cortiços, N. D. Social Housing to nZEB - Portuguese Context. Budapest University of Technology and Economics, pp. 204–212. <a href="https://doi.org/10.3311/CCC2018-027" target="_blank" rel="noopener">doi:10.3311/CCC2018-027</a></li>
+        <li>Cortiços, N. D. Automation for Building Performance and Maintenance Efficiency. Budapest University of Technology and Economics, pp. 24–31. <a href="https://doi.org/10.3311/CCC2018-004" target="_blank" rel="noopener">doi:10.3311/CCC2018-004</a></li>
+        <li>Cortiços, N. D. Building Maintenance for Institutions Based on Annual Budget-Portuguese Context. <em>International Journal of Innovation, Management and Technology</em>, 8, 131–136. <a href="https://doi.org/10.18178/ijimt.2017.8.2.716" target="_blank" rel="noopener">doi:10.18178/ijimt.2017.8.2.716</a></li>
+        <li>Cortiços, N. D. World Heritage Site Maintenance: Brazil National Congress, Brasília. <em>International Journal of Structural and Civil Engineering Research</em>, 6, 318–328. <a href="https://doi.org/10.18178/ijscer.6.4.318-328" target="_blank" rel="noopener">doi:10.18178/ijscer.6.4.318-328</a></li>
+        <li>Cortiços, N. D., &amp; Batista-Bastos, M. (2016). Three Entities to Maximize Creative Construction Quality. <em>Procedia Engineering</em>, 164, 251–260. <a href="https://doi.org/10.1016/j.proeng.2016.11.617" target="_blank" rel="noopener">doi:10.1016/j.proeng.2016.11.617</a></li>
+        <li>Cortiços, N. D. (2016). Risk Analyst: A New Player in the Construction Processes – Portugal. <em>MATEC Web of Conferences</em>, 68, 13005. <a href="https://doi.org/10.1051/matecconf/20166813005" target="_blank" rel="noopener">doi:10.1051/matecconf/20166813005</a></li>
+        <li>Cortiços, N. D. (2015). Construction's Patterns with Impact on the Final Result - 4 Buildings of Higher Education in Lisbon Built in the 1980s and 1990s. <em>International Journal of Architecture and Urban Studies</em>. <a href="https://doi.org/10.13140/RG.2.1.1769.6404" target="_blank" rel="noopener">doi:10.13140/RG.2.1.1769.6404</a></li>
+      </ol>
+      <p class="agenda-note">Full record also available on <a href="https://orcid.org/0000-0002-9446-6199" target="_blank" rel="noopener">ORCID</a>.</p>
     </div>
   </div>
 </section>
@@ -837,6 +876,18 @@ const io=new IntersectionObserver(entries=>{
 counters.forEach(c=>io.observe(c));
 // Close mobile menu on click
 document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+// Full publications list toggle
+(function(){
+  const btn=document.getElementById('fullPubToggle');
+  const list=document.getElementById('fullPubList');
+  if(!btn||!list)return;
+  btn.addEventListener('click',()=>{
+    const open=list.classList.toggle('open');
+    btn.textContent=open?'Hide Full List':'Full List (28)';
+    if(open)setTimeout(()=>list.scrollIntoView({behavior:'smooth',block:'nearest'}),200);
+  });
+})();
 
 // Site search
 (function(){
