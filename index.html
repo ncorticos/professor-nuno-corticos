@@ -43,6 +43,7 @@ img{max-width:100%}
 /* Header */
 header{background:var(--white);position:sticky;top:0;z-index:100;box-shadow:0 2px 14px rgba(56,65,88,.09)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.nav-right{display:flex;align-items:center;gap:10px}
 .logo{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:var(--dark);letter-spacing:.5px}
 .logo span{color:var(--accent)}
 .logo small{display:block;font-size:10.5px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--body);margin-top:-4px}
@@ -50,6 +51,19 @@ nav ul{display:flex;list-style:none;gap:30px}
 nav a{font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.6px;color:var(--dark)}
 nav a:hover{color:var(--accent)}
 .burger{display:none;font-size:24px;color:var(--dark);background:none;border:none;cursor:pointer}
+.search-toggle{background:none;border:none;cursor:pointer;font-size:19px;color:var(--dark);padding:6px 10px;line-height:1;border-radius:6px;transition:background .2s,color .2s}
+.search-toggle:hover{background:var(--light);color:var(--accent)}
+.search-panel{max-height:0;overflow:hidden;background:var(--light);border-top:1px solid #eceff5;transition:max-height .28s ease}
+.search-panel.open{max-height:120px}
+.search-panel .inner{display:flex;align-items:center;gap:14px;padding:18px 20px;max-width:1170px;margin:0 auto}
+.search-panel input{flex:1;font-family:'Roboto',sans-serif;font-size:15px;padding:11px 16px;border:1px solid #d9dee8;border-radius:6px;outline:none;background:#fff;color:var(--dark)}
+.search-panel input:focus{border-color:var(--accent)}
+.search-count{font-family:'Poppins',sans-serif;font-size:12.5px;color:var(--body);white-space:nowrap}
+.search-close{background:none;border:none;font-size:20px;color:var(--body);cursor:pointer;padding:4px 8px;line-height:1}
+.search-close:hover{color:var(--accent)}
+.search-hide{display:none !important}
+mark.search-hit{background:rgba(20,189,238,.28);color:inherit;border-radius:3px;padding:0 1px}
+.search-empty{grid-column:1/-1;text-align:center;padding:30px;color:#9aa0b0;font-size:13.5px;font-style:italic}
 
 /* Hero */
 .hero{position:relative;min-height:620px;display:flex;align-items:center;color:#fff;overflow:hidden;
@@ -231,19 +245,29 @@ footer .logo{color:#fff;margin-bottom:14px}
 <header>
   <div class="container nav">
     <a class="logo" href="#top">Nuno Dinis <span>Cortiços</span><small>Building Science · AI · Sustainability</small></a>
-    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
-    <nav>
-      <ul id="menu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#recent">Recent Work</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#agenda">Agenda</a></li>
-        <li><a href="#partners">Partnerships</a></li>
-        <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="nav-right">
+      <nav>
+        <ul id="menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#recent">Recent Work</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#partners">Partnerships</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="search-toggle" id="searchToggle" aria-label="Search this site">🔍</button>
+      <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+  <div class="search-panel" id="searchPanel">
+    <div class="inner">
+      <input type="text" id="searchInput" placeholder="Search publications, activities, events, partnerships…" aria-label="Search">
+      <span class="search-count" id="searchCount"></span>
+      <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
+    </div>
   </div>
 </header>
 
@@ -866,6 +890,109 @@ const io=new IntersectionObserver(entries=>{
 counters.forEach(c=>io.observe(c));
 // Close mobile menu on click
 document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+// Site search
+(function(){
+  const toggleBtn=document.getElementById('searchToggle');
+  const panel=document.getElementById('searchPanel');
+  const input=document.getElementById('searchInput');
+  const closeBtn=document.getElementById('searchClose');
+  const countEl=document.getElementById('searchCount');
+
+  const containers=[
+    ...document.querySelectorAll('#recent .cards'),
+    document.querySelector('#publications .pub-list'),
+    ...document.querySelectorAll('#agenda .agenda-upcoming'),
+    document.querySelector('#events .grid'),
+    ...document.querySelectorAll('#agenda .grid'),
+    document.querySelector('#partners .grid')
+  ].filter(Boolean);
+
+  const ITEM_CLASSES=['card','pub','event','partner'];
+  function getItems(container){
+    return [...container.children].filter(el=>ITEM_CLASSES.some(c=>el.classList.contains(c)));
+  }
+
+  const originals=new WeakMap();
+  containers.forEach(c=>getItems(c).forEach(item=>originals.set(item,item.innerHTML)));
+
+  function clearHighlight(item){
+    if(originals.has(item))item.innerHTML=originals.get(item);
+  }
+
+  function highlight(item,q){
+    const walker=document.createTreeWalker(item,NodeFilter.SHOW_TEXT,null);
+    const nodes=[];
+    let n;
+    while(n=walker.nextNode())nodes.push(n);
+    const re=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');
+    nodes.forEach(node=>{
+      if(!re.test(node.nodeValue))return;
+      re.lastIndex=0;
+      const frag=document.createDocumentFragment();
+      let lastIndex=0,m;
+      while((m=re.exec(node.nodeValue))){
+        frag.appendChild(document.createTextNode(node.nodeValue.slice(lastIndex,m.index)));
+        const mark=document.createElement('mark');
+        mark.className='search-hit';
+        mark.textContent=m[0];
+        frag.appendChild(mark);
+        lastIndex=m.index+m[0].length;
+      }
+      frag.appendChild(document.createTextNode(node.nodeValue.slice(lastIndex)));
+      node.parentNode.replaceChild(frag,node);
+    });
+  }
+
+  function runSearch(){
+    const raw=input.value.trim();
+    const q=raw.toLowerCase();
+    let totalVisible=0;
+    containers.forEach(container=>{
+      const items=getItems(container);
+      let visibleInSection=0;
+      items.forEach(item=>{
+        clearHighlight(item);
+        if(!q){item.classList.remove('search-hide');visibleInSection++;return;}
+        const match=item.textContent.toLowerCase().includes(q);
+        item.classList.toggle('search-hide',!match);
+        if(match){visibleInSection++;totalVisible++;highlight(item,q);}
+      });
+      let emptyMsg=container.querySelector('.search-empty');
+      if(q&&visibleInSection===0){
+        if(!emptyMsg){
+          emptyMsg=document.createElement('div');
+          emptyMsg.className='search-empty';
+          container.appendChild(emptyMsg);
+        }
+        emptyMsg.textContent='No matches for "'+raw+'"';
+        emptyMsg.style.display='';
+      }else if(emptyMsg){
+        emptyMsg.style.display='none';
+      }
+    });
+    countEl.textContent=q?(totalVisible+' result'+(totalVisible===1?'':'s')):'';
+  }
+
+  function openPanel(){
+    panel.classList.add('open');
+    setTimeout(()=>input.focus(),150);
+  }
+  function closePanel(){
+    panel.classList.remove('open');
+    input.value='';
+    runSearch();
+  }
+
+  toggleBtn.addEventListener('click',()=>{
+    panel.classList.contains('open')?closePanel():openPanel();
+  });
+  closeBtn.addEventListener('click',closePanel);
+  input.addEventListener('input',runSearch);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&panel.classList.contains('open'))closePanel();
+  });
+})();
 </script>
 </body>
 </html>
